@@ -1,3 +1,6 @@
+# REG.NO: 212224110035
+# NAME: MAHA SHREE.M
+
 # T-FLIPFLOP-POSEDGE
 
 **AIM:**
@@ -33,10 +36,31 @@ From the above characteristic table, we can directly write the next state equati
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module exp9(t, clk, rst, q);
+  input t, clk, rst;
+  output reg q;
+
+  always @(posedge clk or posedge rst) 
+begin
+    if (rst)
+      q <= 0; // Reset the flip-flop
+    else if (t==0)
+      q <= q; 
+     else
+        q<=~q;
+  end
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot (216)](https://github.com/user-attachments/assets/0eccb001-b50a-4487-a45b-3d833ab0f8e5)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot (217)](https://github.com/user-attachments/assets/8a5e5e08-2f47-45f0-91a2-bbd5328df318)
+
 **RESULTS**
+
+Thus the implemented T-flipflop are successfull;y verified.
